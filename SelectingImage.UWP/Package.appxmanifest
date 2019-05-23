@@ -7,15 +7,15 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="ac15b068-a982-45cf-b673-ed283f822b9e"
-    Publisher="CN=jit"
+    Name="b15bc403-48b4-4551-b6f8-00797a935da9"
+    Publisher="CN=c4a56127-cdae-4ff3-a27c-221727827788"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="ac15b068-a982-45cf-b673-ed283f822b9e" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="ec0cc741-fd3e-485c-81be-68815c480690" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>SelectingImage.UWP</DisplayName>
-    <PublisherDisplayName>jit</PublisherDisplayName>
+    <PublisherDisplayName>c4a56127-cdae-4ff3-a27c-221727827788</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
@@ -37,7 +37,13 @@
         Square44x44Logo="Assets\Square44x44Logo.png"
         Description="SelectingImage.UWP"
         BackgroundColor="transparent">
-        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square310x310Logo="Assets\LargeTile.png" Square71x71Logo="Assets\SmallTile.png">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo" />
+            <uap:ShowOn Tile="wide310x150Logo" />
+            <uap:ShowOn Tile="square310x310Logo" />
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>
     </Application>
@@ -45,6 +51,5 @@
 
   <Capabilities>
     <Capability Name="internetClient" />
-    <DeviceCapability Name="webcam"/>
   </Capabilities>
 </Package>
