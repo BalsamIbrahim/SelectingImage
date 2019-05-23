@@ -38,5 +38,7 @@
 	<string>Allow the app to control HomeKit enable devices</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>we need access to your photo so we can show you the photo</string>
+	<key>NSCameraUsageDescription</key>
+	<string>This app needs access to the camera to take photos</string>
 </dict>
 </plist>

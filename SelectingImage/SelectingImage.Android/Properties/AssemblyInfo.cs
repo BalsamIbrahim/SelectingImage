@@ -17,6 +17,7 @@ using Android.App;
 [assembly: ComVisible(false)]
 [assembly: UsesFeature("android.hardware.camera", Required = false)]
 [assembly: UsesFeature("android.hardware.camera.autofocus", Required = false)]
+
 // Version information for an assembly consists of the following four values:
 //
 //      Major Version

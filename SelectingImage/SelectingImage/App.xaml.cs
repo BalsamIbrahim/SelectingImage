@@ -11,7 +11,7 @@ namespace SelectingImage
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new ImageUploaderPage());
+            MainPage = new NavigationPage(new TackPhotoFromCam());
         }
 
         protected override void OnStart()
