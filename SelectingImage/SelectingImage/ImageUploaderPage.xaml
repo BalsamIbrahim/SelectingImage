@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SelectingImage.ImageUploaderPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Select"
+                     Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Image x:Name="selectedImage"/>
+    </ContentPage.Content>
+</ContentPage>
