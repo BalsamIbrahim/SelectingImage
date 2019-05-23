@@ -17,7 +17,8 @@ namespace SelectingImage.Droid
     [Application(Debuggable = true)]
 #else
 	[Application(Debuggable = false)]
-#endif
+#endif  
+
     public partial class MainApplication : Application, Application.IActivityLifecycleCallbacks
     {
         public MainApplication(IntPtr handle, JniHandleOwnership transer)
