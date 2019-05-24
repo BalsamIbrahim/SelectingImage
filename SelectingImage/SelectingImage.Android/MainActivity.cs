@@ -24,21 +24,12 @@ namespace SelectingImage.Droid
 
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            Stormlion.ImageCropper.Droid.Platform.Init();
-
-            global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-        }
-        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
-        {
-            base.OnActivityResult(requestCode, resultCode, data);
-
-            Stormlion.ImageCropper.Droid.Platform.OnActivityResult(requestCode, resultCode, data);
         }
         //static int REQUEST_IMAGE_CAPTURE = 1;
 
