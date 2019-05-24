@@ -3,14 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SelectingImage.TackPhotoFromCam">
     <ContentPage.Content>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-
+        <StackLayout>
+            <Button Clicked="CameraButton_Clicked" Text="Take Photo"  />
+            <Button Clicked="Button_Clicked" Text="Upload Photo"  />
             <Image x:Name="PhotoImage" />
-            <Button x:Name="CameraButton" Text="Take Photo" Grid.Row="1" />
-        </Grid>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

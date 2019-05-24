@@ -17,7 +17,7 @@ namespace SelectingImage
         public TackPhotoFromCam()
         {
             InitializeComponent();
-            CameraButton.Clicked += CameraButton_Clicked;
+            //CameraButton.Clicked += CameraButton_Clicked;
         }
         private async void CameraButton_Clicked(object sender, EventArgs e)
         {
@@ -35,7 +35,8 @@ namespace SelectingImage
             //});
             var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
             {
-                DefaultCamera = Plugin.Media.Abstractions.CameraDevice.Front
+                DefaultCamera = Plugin.Media.Abstractions.CameraDevice.Front,
+                SaveToAlbum=true
             });
             if (file == null)
                 return;
@@ -50,6 +51,30 @@ namespace SelectingImage
 
             //if (photo != null)
             //    PhotoImage.Source = ImageSource.FromStream(() => { return photo.GetStream(); });
+        }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            await CrossMedia.Current.Initialize();
+            // take picture 
+            // !Creoss.Current.ISCameraAvailable 
+            // select picture
+            if (!CrossMedia.Current.IsPickPhotoSupported)
+            {
+                await DisplayAlert("Not Supported", "Your device does not currently support this functionality.", "Ok");
+                return;
+            }
+            var MediaOption = new PickMediaOptions()
+            {
+                PhotoSize = PhotoSize.Custom,
+                CustomPhotoSize = 92,
+            };
+            var SelectImageFile = await CrossMedia.Current.PickPhotoAsync(MediaOption);
+            if (PhotoImage == null)
+            {
+                await DisplayAlert("Error", "Could not get the image, please try again ", "Ok");
+            }
+            PhotoImage.Source = ImageSource.FromStream(() => SelectImageFile.GetStream());
         }
     }
 }
